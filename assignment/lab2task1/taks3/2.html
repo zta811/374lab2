@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="2.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   
+ 
+
+</head>
+<body> <div class="container">
+     <button> log out</button>
+   <h3>unclaimed task</h3>
+       <div class="otask">
+          
+             
+            </div>
+         <h3>my task</h3>
+<div class="mytask" ></div>
+<h3>other people's task</h3>
+<div class="taskk"></div>
+
+
+
+
+
+
+         <h3>done</h3>
+          <div class="comp">
+        
+         
+
+
+
+</div>
+
+<h3>get it done by others</h3>
+<div class="other">
+
+
+</div>
+    <div> <input class="txt" type="text" placeholder="my new task" > </div> 
+    <button id="777">remove all </button>
+         </div>
+         
+
+
+
+</body>
+<script type="text/javascript">
+  $(".txt").on("keydown",function (e) {//Press Enter to trigger，keycode == 13 mean enter
+        if(e.keyCode == 13  && $(".txt").val() !="" ){
+            var task =$("<div class='task'></div>").text($(".txt").val());
+            
+            var check =$("<input type='checkbox'>").click(function(){
+                      if ($(check) =checked){
+   p = $(this).parent();
+
+                   p.text(function(){
+
+alert("ok");
+
+
+
+                   });
+                      
+
+
+
+
+                      }
+
+
+
+
+
+
+            });
+            
+
+
+
+
+            var mytaskcomp =$(" <button class='mytaskcomp'>√ </button>").click(function(){
+
+var p=$(this).parent();
+p.fadeOut(function(){
+$(".comp").append(p);
+p.fadeIn();
+
+
+
+});
+
+
+
+$(this).remove();
+
+
+
+});
+var othertaskcomp =$(" <button class='mytaskcomp'>√ </button>").click(function(){
+
+var p=$(this).parent();
+p.fadeOut(function(){
+$(".other").append(p);
+p.fadeIn();
+
+
+
+});
+
+
+
+$(this).remove();
+
+
+
+});
+            
+            
+            var completed =$(" <button class='completed'>I claim </button>").click(function(){
+
+var p=$(this).parent();
+p.fadeOut(function(){
+$(".mytask").append(p);
+p.fadeIn();
+
+
+
+});
+
+task.append(check);
+task.append(mytaskcomp);
+$(this).remove();
+$(help).remove();
+
+
+});
+
+
+var mytaskcomp =$(" <button class='mytaskcomp'>√ </button>").click(function(){
+
+var p=$(this).parent();
+p.fadeOut(function(){
+$(".comp").append(p);
+p.fadeIn();
+
+
+
+});
+
+
+
+$(this).remove();
+
+
+
+});
+
+var othertaskcomp =$(" <button class='mytaskcomp'>√ </button>").click(function(){
+
+var p=$(this).parent();
+p.fadeOut(function(){
+$(".other").append(p);
+p.fadeIn();
+
+
+
+});
+
+
+
+$(this).remove();
+
+
+
+});
+
+
+
+
+
+
+            var completed =$(" <button class='completed'>I claim </button>").click(function(){
+
+                var p=$(this).parent();
+p.fadeOut(function(){
+$(".mytask").append(p);
+p.fadeIn();
+
+
+
+});
+
+
+task.append(mytaskcomp);
+$(this).remove();
+$(help).remove();
+
+
+            });
+            var del =$(" <button class='unfinished'>x</button>").click(function(){
+var p=$(this).parent();
+p.fadeOut(function(){
+p.remove();
+
+
+
+});
+
+
+
+
+
+            });
+
+
+
+            var help =$(" <button class='help'>other people claim</button>").click(function(){
+
+                var p=$(this).parent();
+p.fadeOut(function(){
+$(".taskk").append(p);
+p.fadeIn();
+
+
+
+});
+
+
+task.append(othertaskcomp);
+$(this).remove();
+$(completed).remove();
+
+
+
+
+
+            });
+
+
+
+
+
+
+
+            task.append(completed,help,del);
+            task.before()
+
+$(".otask").append(task);
+$(".txt").val("");
+
+
+        }
+        
+        var shanchu =$(" #777").click(function(){
+var p=$(".other").children();
+ var x =$(".comp").children();
+p.fadeOut(function(){
+p.remove();
+x.remove();
+});
+
+});
+
+ })
+       </script>
+</html>
